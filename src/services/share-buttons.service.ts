@@ -49,10 +49,7 @@ export class ShareButtonsService {
             args = Object.assign({}, args, { via: this.twitterAccount });
         }
 
-        /** check for mobile browser (this won't detect tablets browser) */
-        if (this.window.innerWidth <= 480) {
-            args = Object.assign({}, args, { mobile: true });
-        }
+        args = Object.assign({}, args, { mobile: false });
 
         let popUp = this.window.open(Helper.shareFactory(type, args), 'newwindow', this.windowAttr());
 
